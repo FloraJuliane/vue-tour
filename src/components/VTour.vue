@@ -202,7 +202,11 @@ export default {
 
     handleTargetNotFound (step) {
       this.$emit('targetNotFound', step)
-      if (this.skipMissingTargets) this.nextStep()
+      if (this.skipMissingTargets && this.isLast) {
+        this.stop()
+      } else if (this.skipMissingTargets && !this.isLast) {
+        this.nextStep()
+      }
     }
   }
 }
