@@ -98,7 +98,7 @@ export default {
     }
   },
   methods: {
-    createStep () {s
+    createStep () {
       if (this.debug) {
         console.log('[Vue Tour] The target element ' + this.step.target + ' of .v-step[id="' + this.hash + '"] is:', this.targetElement)
       }
@@ -132,16 +132,6 @@ export default {
             callback: undefined,
             a11y: false
           }
-      if (targetElement) {
-        if (this.params.enableScrolling) {
-          if (this.step.duration || this.step.offset) {
-            let jumpOptions = {
-              duration: this.step.duration || 1000,
-              offset: this.step.offset || 0,
-              callback: undefined,
-              a11y: false
-            }
-
           jump(this.targetElement, jumpOptions)
         } else {
           // Use the native scroll by default if no scroll options has been defined
